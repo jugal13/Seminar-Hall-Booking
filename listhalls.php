@@ -4,22 +4,16 @@ $username = "root";
 $password = "";
 $database = "dbproject";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
 $sql = "SELECT * FROM halls";
 
-// var_dump($conn->query($sql));
 $result = $conn->query($sql);
-// var_dump($result->num_rows);
 if ($conn->query($sql) == TRUE) {
-    // echo "Vet record READ!";
-
 ?>
 <html>
 <head>
@@ -62,8 +56,6 @@ if ($conn->query($sql) == TRUE) {
 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-    // var_dump($conn->query($sql));
-
 }
 
 $conn->close();

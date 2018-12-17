@@ -1,3 +1,7 @@
+CREATE DATABASE dbproject;
+
+use dbproject;
+
 CREATE TABLE `halls` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) DEFAULT NULL,
