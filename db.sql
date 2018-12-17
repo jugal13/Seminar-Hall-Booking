@@ -21,6 +21,13 @@ CREATE TABLE `schedule` (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `user_password` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+
 INSERT INTO `halls` (`id`, `name`, `location`, `capacity`)
 VALUES
 	(1, 'Apex Seminar Hall', 'Apex Block', 600),
@@ -33,6 +40,11 @@ VALUES
 INSERT INTO `schedule` (`id`, `hall_name`, `slot_date`, `person_name`, `start_time`, `end_time`)
 VALUES
 	(1, 'ESB Small Seminar Hall', '2018-12-17', 'test', '12:00:00', '14:00:00'),
-	(2, 'Apex Seminar Hall', '2018-12-24', 'test1', '13:00:00', '15:00:00'),
-	(3, 'DES Hi-tech Seminar Hall', '2018-12-16', 'test2', '16:00:00', '18:00:00'),
-	(4, 'LHC Seminar Hall 1', '2018-12-18', 'test3', '16:00:00', '17:00:00');
+	(2, 'Apex Seminar Hall', '2018-12-24', 'test', '13:00:00', '15:00:00'),
+	(3, 'DES Hi-tech Seminar Hall', '2018-12-16', 'test', '16:00:00', '18:00:00'),
+	(4, 'LHC Seminar Hall 1', '2018-12-18', 'test', '16:00:00', '17:00:00');
+
+  INSERT INTO `person` (`id`, `username`, `user_password`)
+VALUES
+	(1, 'test', 'test');
+
