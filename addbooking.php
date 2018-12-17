@@ -19,9 +19,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "Select * from Schedule where slot_date = '$slot_date' and hall_name = '$hall_name' and start_time = '$start_time'";
+$sql = "SELECT * from Schedule WHERE slot_date = '$slot_date' AND hall_name = '$hall_name' AND start_time = '$start_time'";
+
 $result = $conn->query($sql);
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) == TRUE) {
     if ($result->num_rows > 0) {
         echo "Hall is already booked";
     }
@@ -46,7 +47,7 @@ else {
 <title>Booking Hall</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<meta http-equiv="refresh" content="3; URL=listschedule.php">
+<!-- <meta http-equiv="refresh" content="3; URL=listschedule.php"> -->
 </head>
 </html>
 
