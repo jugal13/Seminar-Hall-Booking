@@ -1,3 +1,6 @@
+<?php 
+    session_start()
+?>
 <html>
 <head>
     <title>
@@ -5,8 +8,6 @@
     </title>
 </head>
 <body>
-    <a href="listhalls.php">Halls</a>
-    <a href="listschedule.php">Schedule</a>
-    <a href="bookhall.php">Booking</a>
+    <a href="login.php">Log in</a>
 </body>
 </html>

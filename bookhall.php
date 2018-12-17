@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(!$_SESSION['loggedin'])
+    {
+        header("Location: login.php");
+    }
+?>
 <html>
 
 <head>
@@ -10,7 +17,7 @@
 
 <button onclick="goBack()">Go Back</button>
 
-<a href="index.php">Main </a> <p>&nbsp;</p>
+<a href="about.php">Main </a> <p>&nbsp;</p>
 
 <strong>Book Hall</strong> <p></p>
 
@@ -31,7 +38,7 @@ function goBack() {
                     <option value="Apex Seminar Hall">Apex Seminar Hall</option>
                   </select><p></p>
             Date: <input type="date" name="slotdate"><p></p>
-            Name: <input type="text" name="name"><p></p>
+            <!-- Name: <input type="text" name="name"><p></p> -->
             Start Time: <input type="time" name="starttime"><p></p>
             End Time: <input type="time" name="endtime"><p></p>
             <input type="submit"><p></p>

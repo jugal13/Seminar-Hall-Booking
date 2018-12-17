@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!$_SESSION['loggedin'])
+    {
+        header("Location: login.php");
+    }
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
@@ -22,8 +27,13 @@ if ($conn->query($sql) == TRUE) {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-<p><a href="index.php">Main</a></p>
-
+<button onclick="goBack()">Go Back</button>
+<p><a href="about.php">Main</a></p>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 <table border="2"> 
 <?php 
     if ($result->num_rows > 0) { ?>

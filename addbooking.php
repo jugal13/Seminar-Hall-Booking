@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(!$_SESSION['loggedin'])
+    {
+        header("Location: login.php");
+    }
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
@@ -6,7 +11,7 @@ $database = "dbproject";
 
 $hall_name = $_POST["hall"];
 $slot_date = $_POST["slotdate"];
-$person_name = $_POST["name"];
+$person_name = $_SESSION['username'];
 $start_time = $_POST["starttime"];
 $end_time = $_POST["endtime"];
 
@@ -47,7 +52,7 @@ else {
 <title>Booking Hall</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- <meta http-equiv="refresh" content="3; URL=listschedule.php"> -->
+<meta http-equiv="refresh" content="3; URL=listschedule.php">
 </head>
 </html>
 
