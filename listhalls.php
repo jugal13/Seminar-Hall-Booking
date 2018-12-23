@@ -4,7 +4,7 @@ if(!$_SESSION['loggedin'])
     {
         header("Location: login.php");
     }
-$servername = "localhost:3306";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "dbproject";
