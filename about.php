@@ -1,6 +1,6 @@
 <?php 
     session_start();
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "root";
 $password = "";
 $database = "dbproject";

@@ -4,7 +4,7 @@
     {
         header("Location: login.php");
     }
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "root";
 $password = "";
 $database = "dbproject";
